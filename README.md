@@ -1,6 +1,16 @@
-# Dargstack Example
+# DargStack Example
 
-For deployment on a new server, execute the following commands, followed by `dargstack deploy -p latest`.
+This is just a basic Angular app that is served as the main website within the [dargstack-example_stack](https://github.com/dargmuesli/dargstack-example_stack).
+
+
+## Table of Contents
+
+1. **[Quickstart](#quickstart)**
+
+
+## Quickstart
+
+For deployment on a new server, execute the following two commands, followed by `dargstack deploy -p latest`.
 
 ```bash
 mkdir ~/scripts/ \
@@ -12,3 +22,6 @@ mkdir ~/scripts/ \
 mkdir -p ~/dargstack/dargmuesli/dargstack-example_stack/ \
     && cd ~/dargstack/dargmuesli/dargstack-example_stack/
 ```
+
+After creating the resources as requested, that's already it!
+The example stack should be up and running using the parameters you've set.
