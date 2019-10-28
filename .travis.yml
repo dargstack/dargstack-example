@@ -1,0 +1,24 @@
+dist: bionic
+services:
+- docker
+env:
+  global:
+  - COMMIT=${TRAVIS_COMMIT::8}
+  - DOCKER_CLI_EXPERIMENTAL=enabled
+  - REPO_NAME=dargmuesli
+  - REPO_USER=dargstack-example
+  - secure: rI49L7rymw42i2hIy7e64LCIlbpLuOzCwCGnnRKuyTHsFr+eHhcSEP4RrzijUOXjG9kQeWbvoEHbS2GEL7J5ZDHo416cD61jOGJnZtz+Kxh/k/bUhtAQw4hTitjKvORVQSd42RzMkSFfe9bfmcN5kRzsvonqpYpNuGn9gIQ9XE9rDr7KKarPKne+olVqm8KHtmHTS/HUSjYxxXQ5yticyIbSieP25NEev0X/17WLeKRQfvQdSx8ewnyv4JRXI3GvClapSOLjqponDTFI3OVObDaTE0w/CI4QgFAv4a8VPA0JtXjST/2kRGOcPfyZ6BYnQuvLcqQE1mdTERrhmyoowtspZXR6NHSROZ/Cug7UlcVQjAl+6aGVP0inS9OCx171b2q+hQaGvHFMjnamsymNqpCtpdlIuZFPA2bA0vTpK4Aaj/06mdgayHQSACPJEIH9QS5rpKlBKnV7umnhQr3oOR2IOuLAPOUWjowWbPH33C2vDuW75RvUV2METdaiL320EsAN0huV4vEBY0NbHreLqA+RhrKkxF1KCnEk4He6yNwblWXTB8RvHm3BW/AGHTbcTcudYCq3APg11xdD5P2hbQtEAN0QmunBfGxc1LHUxPS90BYd/eKmPDZkTa7jfbrqX3QjeN2psKHM9byMH6qqW319lpGLGgYUDZ8XtK32ixM= #DOCKER_USER
+  - secure: V6kHoegFia1ZBHsIAGfBZXBcxtNZzPK7IpQWoZB0OtydgN8B+9CTvd0F5JZ8J9WSlE8d9upG2B1eZHKjq955ng12iBj/6Sgm7ytlRc3MkTRTjor4qN+ROUZB8tmLUpIKxpKES4N+8XZTGufxuLYOY/e98N/h4+BZopAPA9Xp3MPHIqlzBoz5jKHuKwwgTCYFxsRiHlh/gc5f4/3wLXV1z3JdFC1LcuolqJnjAaHr0prm7Pdogb3x6MCLyMZX+68GFKs03n0GejqMcNDvAdM0xs5Yqs+qFaZmn2O+HfEQCftlPQEGJyyxgl/6WWl8Ctc56YJhFwaqtWRuSq4HXjLNUmfTbSz9QMA96mZcG304/sBfmg36uyn3Afoi+56GyfEHa3f9ttueKA1T1SXlJOu5er5w5B3w6RS5vKqayu7q/mzFooeRFF6jIPauPJMoiltBtATz0lqn8ewuQmT9upRLYTgMxkKZULQ42ZywT9zbJb/ZgoCuq8rhF8X5DCzucjSZN1PxUEYYPXGZBVooOAMoTHsaSt18cVagOOnneLiFCPKu7YPBy8nmowI4+eFbB9uHSOURv5RGIJ4COmKODEXlC/y1q7wZ6NcXj2bEU2X3LION/1xtxbXBVpwLKmnrxdjy9pHtXfbKc2vyfB9BnK8kIQIykxojbkzDJd1BGDQLbtI= #DOCKER_PASS
+before_install:
+- echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
+- export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $(echo $TRAVIS_BRANCH | tr / _); fi`
+- |
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+    sudo apt-get update
+    sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-ce
+- |
+    docker buildx create --name travis-builder --use
+    docker buildx inspect --bootstrap
+script:
+- docker buildx build --cache-from=$REPO_USER/$REPO_NAME:cache --cache-to=$REPO_USER/$REPO_NAME:cache --push -t $REPO_USER/$REPO_NAME:$COMMIT -t $REPO_USER/$REPO_NAME:$TAG $PWD
