@@ -1,3 +1,5 @@
+[![build status](https://travis-ci.com/dargmuesli/dargstack-example.svg?branch=master)](https://travis-ci.com/dargmuesli/dargstack-example "build status")
+
 # DargStack Example
 
 This is just a basic Angular app that is served as the main website within the [dargstack-example_stack](https://github.com/dargmuesli/dargstack-example_stack).
