@@ -16,7 +16,7 @@ For deployment on a new server, execute the following two commands, followed by 
 
 ```bash
 mkdir ~/scripts/ \
-    && wget https://raw.githubusercontent.com/dargmuesli/dargstack/master/dargstack -O ~/scripts/dargstack \
+    && wget https://raw.githubusercontent.com/dargmuesli/dargstack/master/src/dargstack -O ~/scripts/dargstack \
     && chmod +x ~/scripts/dargstack \
     && echo 'export PATH="$PATH:$HOME/scripts/"' >> ~/.bashrc \
     && . ~/.bashrc
