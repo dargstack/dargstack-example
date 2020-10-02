@@ -1,6 +1,8 @@
 {
   "name": "dargstack-example",
+  "private": true,
   "version": "1.2.0",
+  "scheduleVersion": "1.2.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,7 +11,6 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "8.2.14",
     "@angular/common": "8.2.14",
@@ -28,10 +29,13 @@
     "@angular/cli": "8.3.14",
     "@angular/compiler-cli": "8.2.12",
     "@angular/language-service": "8.2.12",
+    "@commitlint/cli": "11.0.0",
+    "@commitlint/config-conventional": "11.0.0",
     "@types/jasmine": "3.4.4",
     "@types/jasminewd2": "2.0.8",
     "@types/node": "8.10.56",
     "codelyzer": "5.2.0",
+    "husky": "4.3.0",
     "jasmine-core": "3.5.0",
     "jasmine-spec-reporter": "4.2.1",
     "karma": "4.4.1",
@@ -43,5 +47,10 @@
     "ts-node": "8.4.1",
     "tslint": "5.20.0",
     "typescript": "3.5.3"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   }
 }
