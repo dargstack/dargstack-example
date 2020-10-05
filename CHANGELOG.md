@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/dargmuesli/dargstack-example/compare/1.3.0...1.3.1) (2020-10-05)
+
+
+### Bug Fixes
+
+* **release:** schedule release ([3de6a6c](https://github.com/dargmuesli/dargstack-example/commit/3de6a6c7b944d728120a94493c922147e082c43f))
+
 # [1.3.0](https://github.com/dargmuesli/dargstack-example/compare/1.2.0...1.3.0) (2020-10-03)
 
 
