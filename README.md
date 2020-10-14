@@ -1,4 +1,4 @@
-[![build status](https://travis-ci.com/dargmuesli/dargstack-example.svg?branch=master)](https://travis-ci.com/dargmuesli/dargstack-example "build status")
+[![Docker CI](https://github.com/dargmuesli/dargstack-example/workflows/CI/badge.svg)](https://github.com/dargmuesli/dargstack-example/actions?query=workflow%3A%22CI%22)
 
 # DargStack Example
 
