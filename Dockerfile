@@ -79,18 +79,3 @@ WORKDIR /srv/app/
 
 COPY --from=build /srv/app/.output ./.output
 COPY --from=lint /srv/app/package.json /tmp/lint/package.json
-
-
-#######################
-# Provide a web server.
-
-# Should be the specific version of `nginx:alpine`.
-FROM nginx:1.23.3-alpine@sha256:6318314189b40e73145a48060bff4783a116c34cc7241532d0d94198fb2c9629 AS production
-
-WORKDIR /usr/share/nginx/html
-
-COPY ./docker/nginx.conf /etc/nginx/nginx.conf
-
-COPY --from=collect /srv/app/.output/public/ ./
-
-HEALTHCHECK --interval=10s CMD wget -O /dev/null http://localhost/api/healthcheck || exit 1
