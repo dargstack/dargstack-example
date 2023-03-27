@@ -1,3 +1,13 @@
+# [2.0.0](https://github.com/dargmuesli/dargstack-example/compare/1.3.1...2.0.0) (2023-03-27)
+
+
+* feat!: migrate to nuxt ([8c0c494](https://github.com/dargmuesli/dargstack-example/commit/8c0c49433d7f9f063e93ad810dd05b8deaf954f8))
+
+
+### BREAKING CHANGES
+
+* drop Angular, use Nuxt
+
 # [2.0.0-beta.1](https://github.com/dargmuesli/dargstack-example/compare/1.3.1...2.0.0-beta.1) (2023-03-27)
 
 
