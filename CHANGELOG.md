@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/dargmuesli/dargstack-example/compare/2.0.0...2.1.0) (2023-03-27)
+
+
+### Features
+
+* **docker:** remove production deployment ([e650abb](https://github.com/dargmuesli/dargstack-example/commit/e650abbb3e89f726ad1c4709c69c02a21dffd548))
+
 # [2.0.0](https://github.com/dargmuesli/dargstack-example/compare/1.3.1...2.0.0) (2023-03-27)
 
 
