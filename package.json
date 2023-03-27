@@ -7,7 +7,7 @@
   "engines": {
     "node": "18"
   },
-  "packageManager": "pnpm@7.30.2",
+  "packageManager": "pnpm@7.30.3",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
