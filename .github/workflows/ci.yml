@@ -10,6 +10,8 @@ jobs:
   build:
     name: Build
     uses: dargmuesli/github-actions/.github/workflows/docker-ghcr.yml@0.35.2
+    permissions:
+      packages: write
     with:
       ARTIFACT_PATH: .output/public
   release-semantic:
@@ -25,7 +27,6 @@ jobs:
     permissions:
       contents: read
       deployments: write
-      packages: write
     secrets:
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
     with:
