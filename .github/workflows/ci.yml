@@ -13,13 +13,15 @@ jobs:
     permissions:
       packages: write
     with:
-      ARTIFACT_PATH: .output/public
+      ARTIFACT_PATH: nuxt/.output/public
   release-semantic:
     needs: build
     name: Release (semantic)
     uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@0.36.0
     secrets:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    with:
+      CACHE_PATH: pnpm-lock.yaml
   deploy:
     needs: build
     name: Deploy

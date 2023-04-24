@@ -1,38 +1,15 @@
 {
-  "name": "dargstack-example",
-  "version": "2.1.4",
   "private": true,
-  "type": "module",
   "engines": {
     "node": "20"
   },
   "packageManager": "pnpm@8.3.1",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "lint": "pnpm lint:js && pnpm lint:ts",
-    "lint:js": "eslint --cache --ext .js,.ts,.vue --ignore-path .gitignore .",
-    "lint:staged": "pnpm lint-staged",
-    "lint:ts": "pnpm nuxt typecheck",
-    "prepare": "husky install",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "start": "npx http-server .output/public -p 3000"
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@commitlint/cli": "17.6.1",
     "@commitlint/config-conventional": "17.6.1",
-    "@nuxtjs/eslint-config-typescript": "12.0.0",
-    "eslint": "8.39.0",
-    "eslint-config-prettier": "8.8.0",
-    "eslint-plugin-nuxt": "4.0.0",
-    "eslint-plugin-prettier": "4.2.1",
-    "eslint-plugin-yml": "1.5.0",
-    "husky": "8.0.3",
-    "lint-staged": "13.2.1",
-    "nuxt": "3.4.2",
-    "prettier": "2.8.8",
-    "typescript": "5.0.4"
+    "husky": "8.0.3"
   }
 }
