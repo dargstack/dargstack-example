@@ -15,7 +15,7 @@
     "lint:js": "eslint --cache --ext .js,.ts,.vue --ignore-path .gitignore .",
     "lint:staged": "pnpm lint-staged",
     "lint:ts": "pnpm nuxt typecheck",
-    "prepare": "pnpm nuxt prepare && if [ \"$NODE_ENV\" != \"production\" ]; then husky install && shx rm -rf .git/hooks && shx ln -s ../.husky .git/hooks; fi",
+    "prepare": "husky install",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "start": "npx http-server .output/public -p 3000"
@@ -33,7 +33,6 @@
     "lint-staged": "13.2.1",
     "nuxt": "3.4.2",
     "prettier": "2.8.8",
-    "shx": "0.3.4",
     "typescript": "5.0.4"
   }
 }
