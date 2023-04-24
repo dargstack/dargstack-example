@@ -37,6 +37,7 @@ COPY ./ ./
 
 RUN pnpm install --offline
 
+
 ########################
 # Build Nuxt.
 
@@ -52,7 +53,7 @@ COPY --from=prepare /srv/app/ ./
 
 ENV NODE_ENV=production
 RUN corepack enable && \
-    pnpm run generate
+    pnpm --dir nuxt run generate
 
 
 ########################
@@ -66,7 +67,7 @@ WORKDIR /srv/app/
 COPY --from=prepare /srv/app/ ./
 
 RUN corepack enable && \
-    pnpm run lint
+    pnpm --dir nuxt run lint
 
 
 #######################
@@ -77,5 +78,5 @@ FROM node:20.0.0-alpine@sha256:2ffec31a58e85fbcd575c544a3584f6f4d128779e6b856153
 
 WORKDIR /srv/app/
 
-COPY --from=build /srv/app/.output ./.output
+COPY --from=build /srv/app/nuxt/.output ./.output
 COPY --from=lint /srv/app/package.json /tmp/lint/package.json
