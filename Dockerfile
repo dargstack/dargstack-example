@@ -1,7 +1,6 @@
 #############
 # Serve Nuxt in development mode.
 
-# Should be the specific version of `node:alpine`.
 FROM node:20.0.0-alpine@sha256:2ffec31a58e85fbcd575c544a3584f6f4d128779e6b856153a04366b8dd01bb0 AS development
 
 COPY ./docker/entrypoint.sh /usr/local/bin/docker-entrypoint.sh
@@ -23,7 +22,6 @@ CMD ["pnpm", "run", "dev"]
 ########################
 # Prepare Nuxt.
 
-# Should be the specific version of `node:slim`.
 FROM node:20.0.0-alpine@sha256:2ffec31a58e85fbcd575c544a3584f6f4d128779e6b856153a04366b8dd01bb0 AS prepare
 
 WORKDIR /srv/app/
@@ -41,7 +39,6 @@ RUN pnpm install --offline
 ########################
 # Build Nuxt.
 
-# Should be the specific version of `node:alpine`.
 FROM node:20.0.0-alpine@sha256:2ffec31a58e85fbcd575c544a3584f6f4d128779e6b856153a04366b8dd01bb0 AS build
 
 ARG NUXT_PUBLIC_STACK_DOMAIN=jonas-thelemann.de
@@ -59,7 +56,6 @@ RUN corepack enable && \
 ########################
 # Nuxt: lint
 
-# Should be the specific version of `node:alpine`.
 FROM node:20.0.0-alpine@sha256:2ffec31a58e85fbcd575c544a3584f6f4d128779e6b856153a04366b8dd01bb0 AS lint
 
 WORKDIR /srv/app/
@@ -73,7 +69,6 @@ RUN corepack enable && \
 #######################
 # Collect build, lint and test results.
 
-# Should be the specific version of `node:alpine`.
 FROM node:20.0.0-alpine@sha256:2ffec31a58e85fbcd575c544a3584f6f4d128779e6b856153a04366b8dd01bb0 AS collect
 
 WORKDIR /srv/app/
