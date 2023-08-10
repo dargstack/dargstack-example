@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     name: Build
-    uses: dargmuesli/github-actions/.github/workflows/docker-ghcr.yml@0.40.17
+    uses: dargmuesli/github-actions/.github/workflows/docker.yml@0.41.0
     permissions:
       packages: write
     with:
@@ -17,15 +17,15 @@ jobs:
   release-semantic:
     needs: build
     name: Release (semantic)
-    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@0.40.17
+    uses: dargmuesli/github-actions/.github/workflows/release-semantic.yml@0.41.0
+    permissions:
+      contents: write
     secrets:
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
-    with:
-      CACHE_PATH: pnpm-lock.yaml
+      PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
   deploy:
     needs: build
     name: Deploy
-    uses: dargmuesli/github-actions/.github/workflows/deploy-cloudflare-pages.yml@0.40.17
+    uses: dargmuesli/github-actions/.github/workflows/deploy-cloudflare-pages.yml@0.41.0
     permissions:
       contents: read
       deployments: write
