@@ -53,7 +53,7 @@ COPY --from=prepare /srv/app/ ./
 
 ENV NODE_ENV=production
 RUN corepack enable && \
-    pnpm --dir nuxt run generate
+    pnpm --dir src run generate
 
 
 ########################
@@ -66,7 +66,7 @@ WORKDIR /srv/app/
 COPY --from=prepare /srv/app/ ./
 
 RUN corepack enable && \
-    pnpm --dir nuxt run lint
+    pnpm --dir src run lint
 
 
 #######################
@@ -76,5 +76,5 @@ FROM node:20.8.1-alpine@sha256:002b6ee25b63b81dc4e47c9378ffe20915c3fa0e98e834c46
 
 WORKDIR /srv/app/
 
-COPY --from=build /srv/app/nuxt/.output ./.output
+COPY --from=build /srv/app/src/.output ./.output
 COPY --from=lint /srv/app/package.json /tmp/lint/package.json

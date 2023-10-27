@@ -10,10 +10,9 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "lint": "pnpm lint:js && pnpm lint:ts",
     "lint:js": "eslint --cache --ext .js,.ts,.vue --ignore-path .gitignore .",
-    "lint:staged": "pnpm lint-staged",
     "lint:ts": "nuxt typecheck",
+    "lint": "pnpm run lint:js && pnpm run lint:ts",
     "prepare": "nuxt prepare",
     "preview": "nuxt preview",
     "start": "npx http-server .output/public -p 3000"
@@ -28,6 +27,8 @@
     "lint-staged": "15.0.2",
     "nuxt": "3.8.0",
     "prettier": "3.0.3",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "vue": "3.3.7",
+    "vue-router": "4.2.5"
   }
 }
