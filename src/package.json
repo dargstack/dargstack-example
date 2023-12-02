@@ -20,7 +20,7 @@
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "12.1.0",
     "eslint": "8.55.0",
-    "eslint-config-prettier": "9.0.0",
+    "eslint-config-prettier": "9.1.0",
     "eslint-plugin-nuxt": "4.0.0",
     "eslint-plugin-prettier": "5.0.1",
     "eslint-plugin-yml": "1.10.0",
