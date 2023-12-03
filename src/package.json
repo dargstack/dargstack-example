@@ -24,7 +24,7 @@
     "eslint-plugin-nuxt": "4.0.0",
     "eslint-plugin-prettier": "5.0.1",
     "eslint-plugin-yml": "1.10.0",
-    "lint-staged": "15.1.0",
+    "lint-staged": "15.2.0",
     "nuxt": "3.8.2",
     "prettier": "3.1.0",
     "typescript": "5.3.2",
