@@ -1,3 +1,10 @@
+## [2.1.27](https://github.com/dargstack/dargstack-example/compare/2.1.26...2.1.27) (2024-01-24)
+
+
+### Bug Fixes
+
+* schedule release ([cedbaba](https://github.com/dargstack/dargstack-example/commit/cedbabab189c98694ba6b056b12132ef7fda9a2a))
+
 ## [2.1.26](https://github.com/dargstack/dargstack-example/compare/2.1.25...2.1.26) (2024-01-10)
 
 
