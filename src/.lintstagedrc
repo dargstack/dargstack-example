@@ -1,0 +1,3 @@
+{
+  "*.{js,json,ts,vue}": "pnpm run lint:js"
+}
