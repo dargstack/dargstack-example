@@ -1,9 +1,9 @@
-import prettier from 'eslint-plugin-prettier/recommended'
+import prettierRecommended from 'eslint-plugin-prettier/recommended'
 
 import withNuxt from './.nuxt/eslint.config.mjs'
 
 export default withNuxt(
-  prettier, // must be last
+  prettierRecommended, // must be last
 
   // {
   //   languageOptions: {
