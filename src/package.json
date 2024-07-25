@@ -11,7 +11,7 @@
     "typescript": "5.5.4",
     "vue": "3.4.34",
     "vue-router": "4.4.0",
-    "vue-tsc": "2.0.28"
+    "vue-tsc": "2.0.29"
   },
   "engines": {
     "node": "20"
