@@ -9,8 +9,8 @@
     "prettier": "3.3.3",
     "serve": "14.2.3",
     "typescript": "5.5.4",
-    "vue": "3.4.35",
-    "vue-router": "4.4.2",
+    "vue": "3.4.36",
+    "vue-router": "4.4.3",
     "vue-tsc": "2.0.29"
   },
   "engines": {
