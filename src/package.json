@@ -1,11 +1,11 @@
 {
   "devDependencies": {
-    "@nuxt/eslint": "0.5.1",
+    "@nuxt/eslint": "0.5.2",
     "eslint": "9.9.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-prettier": "5.2.1",
     "lint-staged": "15.2.9",
-    "nuxt": "3.12.4",
+    "nuxt": "3.13.0",
     "prettier": "3.3.3",
     "serve": "14.2.3",
     "typescript": "5.5.4",
