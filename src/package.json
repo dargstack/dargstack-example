@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "@nuxt/eslint": "0.5.2",
+    "@nuxt/eslint": "0.5.3",
     "eslint": "9.9.1",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-prettier": "5.2.1",
