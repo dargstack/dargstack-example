@@ -14,7 +14,7 @@
     "vue-tsc": "2.1.8"
   },
   "engines": {
-    "node": "20"
+    "node": "22"
   },
   "name": "dargstack-example",
   "private": true,
