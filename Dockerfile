@@ -29,7 +29,7 @@ ENV CI=true
 
 WORKDIR /srv/app/
 
-COPY ./pnpm-lock.yaml ./
+COPY ./pnpm-lock.yaml package.json ./
 
 RUN corepack enable && \
     pnpm fetch
