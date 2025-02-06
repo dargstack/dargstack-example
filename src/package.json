@@ -29,5 +29,5 @@
     "start": "serve .output/public"
   },
   "type": "module",
-  "version": "2.1.56"
+  "version": "2.1.57"
 }
