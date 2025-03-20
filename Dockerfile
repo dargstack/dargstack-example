@@ -5,9 +5,7 @@ FROM node:22.14.0-alpine@sha256:9bef0ef1e268f60627da9ba7d7605e8831d5b56ad07487d2
 
 COPY ./docker/entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
-RUN npm install -g corepack@latest \
-  # TODO: remove (https://github.com/nodejs/corepack/issues/612)
-  && corepack enable
+RUN corepack enable
 
 WORKDIR /srv/app/
 
@@ -33,9 +31,7 @@ WORKDIR /srv/app/
 
 COPY ./pnpm-lock.yaml package.json ./
 
-RUN npm install -g corepack@latest \
-    # TODO: remove (https://github.com/nodejs/corepack/issues/612)
-    && corepack enable \
+RUN corepack enable \
     && pnpm fetch
 
 COPY ./ ./
@@ -56,9 +52,7 @@ WORKDIR /srv/app/
 COPY --from=prepare /srv/app/ ./
 
 ENV NODE_ENV=production
-RUN npm install -g corepack@latest \
-    # TODO: remove (https://github.com/nodejs/corepack/issues/612)
-    && corepack enable \
+RUN corepack enable \
     && pnpm --dir src run generate
 
 
@@ -71,9 +65,7 @@ WORKDIR /srv/app/
 
 COPY --from=prepare /srv/app/ ./
 
-RUN npm install -g corepack@latest \
-    # TODO: remove (https://github.com/nodejs/corepack/issues/612)
-    && corepack enable \
+RUN corepack enable \
     && pnpm --dir src run lint
 
 
