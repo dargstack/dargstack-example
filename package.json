@@ -4,6 +4,13 @@
     "node": "22"
   },
   "packageManager": "pnpm@10.10.0",
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "@parcel/watcher",
+      "esbuild",
+      "unrs-resolver"
+    ]
+  },
   "scripts": {
     "prepare": "husky"
   },
