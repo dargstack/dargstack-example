@@ -6,7 +6,7 @@
     "eslint-plugin-prettier": "5.5.1",
     "lint-staged": "16.1.2",
     "nuxt": "3.17.5",
-    "prettier": "3.6.1",
+    "prettier": "3.6.2",
     "serve": "14.2.4",
     "vue": "3.5.17",
     "vue-router": "4.5.1",
