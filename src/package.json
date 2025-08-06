@@ -1,9 +1,9 @@
 {
   "devDependencies": {
-    "@nuxt/eslint": "1.7.1",
+    "@nuxt/eslint": "1.8.0",
     "eslint": "9.32.0",
     "eslint-config-prettier": "10.1.8",
-    "eslint-plugin-prettier": "5.5.3",
+    "eslint-plugin-prettier": "5.5.4",
     "lint-staged": "16.1.4",
     "nuxt": "4.0.3",
     "prettier": "3.6.2",
