@@ -3,14 +3,7 @@
   "engines": {
     "node": "24"
   },
-  "packageManager": "pnpm@11.0.5",
-  "pnpm": {
-    "ignoredBuiltDependencies": [
-      "@parcel/watcher",
-      "esbuild",
-      "unrs-resolver"
-    ]
-  },
+  "packageManager": "pnpm@11.0.8",
   "scripts": {
     "prepare": "husky"
   },
