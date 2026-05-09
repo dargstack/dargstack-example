@@ -1,1 +1,0 @@
-pnpm --dir src exec lint-staged
