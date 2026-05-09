@@ -1,16 +1,13 @@
 {
-  "private": true,
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.0.8"
+    }
+  },
   "engines": {
     "node": "24"
   },
-  "packageManager": "pnpm@11.0.8",
-  "scripts": {
-    "prepare": "husky"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "20.5.3",
-    "@commitlint/config-conventional": "20.5.3",
-    "husky": "9.1.7"
-  },
+  "private": true,
   "type": "module"
 }
